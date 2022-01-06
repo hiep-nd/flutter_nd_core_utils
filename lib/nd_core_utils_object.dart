@@ -8,6 +8,6 @@ extension NDCoreUtilsObject<T, E> on T {
   E map(E Function(T value) mapper) {
     return mapper(this);
   }
-}
 
-E ndMap<T, E>(self, E Function(T value) mapper) => self.map(mapper);
+  E ndMap(E Function(T value) mapper) => map(mapper);
+}
