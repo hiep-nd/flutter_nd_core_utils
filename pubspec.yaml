@@ -1,6 +1,6 @@
 name: nd_core_utils
 description: An utility library for dart.
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/hiep-nd/nd_core_utils
 
 environment:

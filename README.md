@@ -1,10 +1,10 @@
 # nd_core_utils
 nd_core_utils is a small utility library for dart core.
 
-## 1. ClosureIterable and ClosureIterator
+## 1. NDClosureIterable and NDClosureIterator
 ```dart
-var iteratable = ClosureIterable(get: () => MyIterator());
-var iterator = ClosureIterator(
+var iteratable = NDClosureIterable(get: () => MyIterator());
+var iterator = NDClosureIterator(
     current: () {
         // return current
     },

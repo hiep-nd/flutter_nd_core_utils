@@ -13,3 +13,12 @@
 ## 0.0.4
 
 * Refined Object.map.
+
+## 0.0.5
+
+* Added prefix ND, nd: 
+    * type * -> ND*
+    * method * -> nd*
+* Updated NDCoreUtilsIterable
+* Added NDMapUtils
+* Added NDWrapper

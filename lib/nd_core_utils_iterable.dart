@@ -5,22 +5,23 @@
 //  Created by Nguyen Duc Hiep on 01/12/2021.
 //
 
-import 'package:nd_core_utils/closure_iterable.dart';
-import 'package:nd_core_utils/closure_iterator.dart';
+import 'package:nd_core_utils/nd_closure_iterable.dart';
+import 'package:nd_core_utils/nd_closure_iterator.dart';
 
 extension NDCoreUtilsIterable<E> on Iterable<E> {
-  Iterable<E> insertSeparator(E separator) {
-    return ClosureIterable(get: () {
-      const preFirst = 1 << 0;
-      const item = 1 << 1;
-      const last = 1 << 3;
-      const nextLast = 1 << 4;
+  static const prevFirst = 1 << 0;
+  static const item = 1 << 1;
+  static const first = 1 << 2;
+  static const last = 1 << 3;
+  static const nextLast = 1 << 4;
 
+  Iterable<E> insertSeparator(E separator) {
+    return NDClosureIterable(get: () {
       final it = iterator;
-      var state = preFirst;
+      var state = prevFirst;
       final sub = <E>[];
       int subIndex = 0;
-      return ClosureIterator(
+      return NDClosureIterator(
           current: () => sub[subIndex],
           moveNext: () {
             if (1 + subIndex < sub.length) {
@@ -38,7 +39,7 @@ extension NDCoreUtilsIterable<E> on Iterable<E> {
               return false;
             }
 
-            if (state == preFirst) {
+            if (state == prevFirst) {
               // preFirst
               if (it.moveNext()) {
                 state = item;
@@ -77,4 +78,108 @@ extension NDCoreUtilsIterable<E> on Iterable<E> {
           });
     });
   }
+
+  Iterable<E> insertLead(E lead) {
+    return NDClosureIterable(get: () {
+      final it = iterator;
+      var state = prevFirst;
+      var isLead = false;
+      return NDClosureIterator(
+          current: () => isLead ? lead : it.current,
+          moveNext: () {
+            if (isLead) {
+              isLead = false;
+              return true;
+            }
+
+            if (state == prevFirst) {
+              // preFirst
+              if (it.moveNext()) {
+                state = first & item;
+                isLead = true;
+                return true;
+              } else {
+                return false;
+              }
+            }
+
+            return it.moveNext();
+          });
+    });
+  }
+
+  Iterable<E> insertTrail(E trail) {
+    return NDClosureIterable(get: () {
+      final it = iterator;
+      var state = prevFirst;
+      var isTrail = false;
+      E? buffer;
+      return NDClosureIterator(
+          current: () => isTrail ? trail : buffer!,
+          moveNext: () {
+            if (state & prevFirst != 0) {
+              // preFirst
+              if (it.moveNext()) {
+                // first
+                state = first | item;
+                buffer = it.current;
+                if (it.moveNext()) {
+                } else {
+                  // last
+                  state |= last;
+                }
+                return true;
+              } else {
+                // no items
+                state |= nextLast;
+                return false;
+              }
+            }
+
+            // item
+            if (state & item != 0) {
+              // first
+              if (state & first != 0) {
+                state &= (~first);
+              }
+
+              // not last
+              if (state & last == 0) {
+                buffer = it.current;
+                if (it.moveNext()) {
+                } else {
+                  state |= last;
+                }
+                return true;
+              }
+
+              // last
+              state = nextLast;
+              isTrail = true;
+              buffer = null;
+              return true;
+            }
+
+            // nextLast
+            if (isTrail) {
+              // isTrail
+              isTrail = false;
+            }
+            return false;
+          });
+    });
+  }
+
+  bool startsWith(Iterable<E> sub) {
+    final it = iterator;
+    final subIt = sub.iterator;
+    while (subIt.moveNext()) {
+      if (!it.moveNext() || it.current != subIt.current) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  bool ndStartsWith(Iterable<E> sub) => startsWith(sub);
 }

@@ -4,9 +4,9 @@ import 'package:nd_core_utils/nd_core_utils.dart';
 
 void main() {
   var list = <int>[1, 3, 2, 4];
-  var it2 = ClosureIterable(get: () {
+  var it2 = NDClosureIterable(get: () {
     final it = list.iterator;
-    return ClosureIterator(
+    return NDClosureIterator(
         current: () => it.current * 2, moveNext: () => it.moveNext());
   });
 
