@@ -22,3 +22,7 @@
 * Updated NDCoreUtilsIterable
 * Added NDMapUtils
 * Added NDWrapper
+
+## 0.0.6
+* Added ```Map.set```
+* Added ```NDDebouncedAction``` and relatives

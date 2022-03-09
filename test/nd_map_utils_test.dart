@@ -13,4 +13,14 @@ void main() {
     expect({0: 'zero', 1: 'one', 2: 'two'}.invert(),
         {'zero': 0, 'two': 2, 'one': 1});
   });
+
+  test('Test NDMapUtils.set', () {
+    final map = {0: 'zero', 1: 'one', 2: 'two'};
+
+    map.set(3, 'three');
+    expect(map, {0: 'zero', 1: 'one', 2: 'two', 3: 'three'});
+
+    map.set(3, 'THREE');
+    expect(map, {0: 'zero', 1: 'one', 2: 'two', 3: 'THREE'});
+  });
 }
