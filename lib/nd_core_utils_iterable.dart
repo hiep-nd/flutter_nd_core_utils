@@ -15,7 +15,7 @@ extension NDCoreUtilsIterable<E> on Iterable<E> {
   static const last = 1 << 3;
   static const nextLast = 1 << 4;
 
-  Iterable<E> insertSeparator(E separator) {
+  Iterable<E> insertSeparator(E value) {
     return NDClosureIterable(get: () {
       final it = iterator;
       var state = prevFirst;
@@ -48,7 +48,7 @@ extension NDCoreUtilsIterable<E> on Iterable<E> {
                 sub.add(it.current);
                 if (it.moveNext()) {
                   // not last
-                  sub.add(separator);
+                  sub.add(value);
                 } else {
                   // set last
                   state = state | last;
@@ -69,7 +69,7 @@ extension NDCoreUtilsIterable<E> on Iterable<E> {
             sub.add(it.current);
             if (it.moveNext()) {
               // not last
-              sub.add(separator);
+              sub.add(value);
             } else {
               // set last
               state = state | last;
@@ -79,13 +79,15 @@ extension NDCoreUtilsIterable<E> on Iterable<E> {
     });
   }
 
-  Iterable<E> insertLead(E lead) {
+  Iterable<E> ndInsertSeparator(E value) => insertSeparator(value);
+
+  Iterable<E> insertLead(E value) {
     return NDClosureIterable(get: () {
       final it = iterator;
       var state = prevFirst;
       var isLead = false;
       return NDClosureIterator(
-          current: () => isLead ? lead : it.current,
+          current: () => isLead ? value : it.current,
           moveNext: () {
             if (isLead) {
               isLead = false;
@@ -108,14 +110,16 @@ extension NDCoreUtilsIterable<E> on Iterable<E> {
     });
   }
 
-  Iterable<E> insertTrail(E trail) {
+  Iterable<E> ndInsertLead(E value) => insertLead(value);
+
+  Iterable<E> insertTrail(E value) {
     return NDClosureIterable(get: () {
       final it = iterator;
       var state = prevFirst;
       var isTrail = false;
       E? buffer;
       return NDClosureIterator(
-          current: () => isTrail ? trail : buffer!,
+          current: () => isTrail ? value : buffer!,
           moveNext: () {
             if (state & prevFirst != 0) {
               // preFirst
@@ -170,9 +174,9 @@ extension NDCoreUtilsIterable<E> on Iterable<E> {
     });
   }
 
-  bool startsWith(Iterable<E> sub) {
+  bool startsWith(Iterable<E> value) {
     final it = iterator;
-    final subIt = sub.iterator;
+    final subIt = value.iterator;
     while (subIt.moveNext()) {
       if (!it.moveNext() || it.current != subIt.current) {
         return false;
@@ -181,5 +185,5 @@ extension NDCoreUtilsIterable<E> on Iterable<E> {
     return true;
   }
 
-  bool ndStartsWith(Iterable<E> sub) => startsWith(sub);
+  bool ndStartsWith(Iterable<E> value) => startsWith(value);
 }

@@ -9,4 +9,6 @@ extension NDCoreUtilsIterableNullable<E> on Iterable<E?> {
   Iterable<E> notNull() {
     return expand((element) => element == null ? [] : [element]);
   }
+
+  Iterable<E> ndNotNull() => notNull();
 }

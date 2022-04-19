@@ -9,6 +9,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:nd_core_utils/nd_disposable.dart';
 
 class NDDebouncedActionRunResult<T> {
   T get result => _result!;
@@ -18,7 +19,7 @@ class NDDebouncedActionRunResult<T> {
   final T? _result;
 }
 
-class _NDDebouncedAction {
+class _NDDebouncedAction implements NDDisposable {
   final Duration duration;
 
   _NDDebouncedAction({
@@ -26,6 +27,7 @@ class _NDDebouncedAction {
   });
 
   @mustCallSuper
+  @override
   void dispose() {
     timer?.cancel();
   }
