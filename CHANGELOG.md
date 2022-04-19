@@ -31,3 +31,6 @@
 * Added ```NDDisposable```
 * Renamed ```NDWrapper``` -> ```NDVariableWrapper```
 
+## 1.0.1
+* Added ```NDDisposableWrapper```
+* Added ```NDDisposable.isDisposed```

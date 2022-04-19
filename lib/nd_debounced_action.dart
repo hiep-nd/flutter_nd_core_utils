@@ -30,10 +30,14 @@ class _NDDebouncedAction implements NDDisposable {
   @override
   void dispose() {
     timer?.cancel();
+    timer = null;
   }
 
   @protected
   Timer? timer;
+
+  @override
+  bool get isDisposed => timer == null;
 }
 
 class NDDebouncedAction1<R, P> extends _NDDebouncedAction {
