@@ -66,9 +66,8 @@ class NDDebouncedAction1<R, P> extends _NDDebouncedAction {
     return completer.future;
   }
 
-  void toAction1() => ((arg1) {
-        run1(arg1);
-      });
+  Future<NDDebouncedActionRunResult<R>> Function(P) toAction1() =>
+      ((arg1) => run1(arg1));
 
   Completer<NDDebouncedActionRunResult<R>>? _completer;
 }

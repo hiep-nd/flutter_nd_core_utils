@@ -34,3 +34,6 @@
 ## 1.0.1
 * Added ```NDDisposableWrapper```
 * Added ```NDDisposable.isDisposed```
+
+## 1.0.2
+* Fixed ```NDDebouncedAction1.toAction1```
