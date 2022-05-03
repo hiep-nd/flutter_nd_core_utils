@@ -37,3 +37,9 @@
 
 ## 1.0.2
 * Fixed ```NDDebouncedAction1.toAction1```
+
+## 1.0.3
+* Added default implementation of NDDisposable.isDisposed.
+* Added default implementation of NDDisposable.isDisposed.
+* Renamed ```NDDisposableWrapper``` -> ```NDAutoDisposable```.
+* Deprecated ```NDVariableWrapper```.
