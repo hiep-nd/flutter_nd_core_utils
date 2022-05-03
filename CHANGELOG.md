@@ -43,3 +43,6 @@
 * Added default implementation of NDDisposable.isDisposed.
 * Renamed ```NDDisposableWrapper``` -> ```NDAutoDisposable```.
 * Deprecated ```NDVariableWrapper```.
+
+## 1.0.4
+* Fixed build error for ```NDDisposableWrapper```.
