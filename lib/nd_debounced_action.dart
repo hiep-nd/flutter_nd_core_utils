@@ -40,6 +40,37 @@ class _NDDebouncedAction implements NDDisposable {
   bool get isDisposed => timer == null;
 }
 
+class NDDebouncedAction<R> extends _NDDebouncedAction {
+  final R Function() action;
+
+  NDDebouncedAction({
+    Duration duration = const Duration(milliseconds: 500),
+    required this.action,
+  }) : super(duration: duration);
+
+  Future<NDDebouncedActionRunResult<R>> call() {
+    if (timer?.isActive ?? false) {
+      timer?.cancel();
+      _completer?.complete(const NDDebouncedActionRunResult(false));
+    }
+
+    final completer = Completer<NDDebouncedActionRunResult<R>>();
+    timer = Timer(duration, () {
+      try {
+        completer.complete(NDDebouncedActionRunResult(true, action()));
+      } catch (err, trace) {
+        completer.completeError(err, trace);
+      }
+    });
+    _completer = completer;
+    return completer.future;
+  }
+
+  Future<NDDebouncedActionRunResult<R>> Function() toAction() => (() => call());
+
+  Completer<NDDebouncedActionRunResult<R>>? _completer;
+}
+
 class NDDebouncedAction1<R, P> extends _NDDebouncedAction {
   final R Function(P) action;
 
@@ -48,7 +79,10 @@ class NDDebouncedAction1<R, P> extends _NDDebouncedAction {
     required this.action,
   }) : super(duration: duration);
 
-  Future<NDDebouncedActionRunResult<R>> run1(P arg) {
+  @Deprecated('Use call instead. Will be removed in 1.1')
+  Future<NDDebouncedActionRunResult<R>> run1(P arg) => call(arg);
+
+  Future<NDDebouncedActionRunResult<R>> call(P arg) {
     if (timer?.isActive ?? false) {
       timer?.cancel();
       _completer?.complete(const NDDebouncedActionRunResult(false));
@@ -66,8 +100,11 @@ class NDDebouncedAction1<R, P> extends _NDDebouncedAction {
     return completer.future;
   }
 
-  Future<NDDebouncedActionRunResult<R>> Function(P) toAction1() =>
-      ((arg1) => run1(arg1));
+  @Deprecated('Use call instead. Will be removed in 1.1')
+  Future<NDDebouncedActionRunResult<R>> Function(P) toAction1() => toAction();
+
+  Future<NDDebouncedActionRunResult<R>> Function(P) toAction() =>
+      ((arg1) => call(arg1));
 
   Completer<NDDebouncedActionRunResult<R>>? _completer;
 }

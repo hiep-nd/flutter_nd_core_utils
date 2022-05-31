@@ -46,3 +46,7 @@
 
 ## 1.0.4
 * Fixed build error for ```NDDisposableWrapper```.
+
+## 1.0.5
+* Added ```NDFutureUtils```
+* Deperecated ```NDDebouncedAction1.run1```
