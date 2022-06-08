@@ -50,3 +50,6 @@
 ## 1.0.5
 * Added ```NDFutureUtils```
 * Deperecated ```NDDebouncedAction1.run1```
+
+## 1.0.6
+* Added ```NDDisposableBag```
