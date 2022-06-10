@@ -53,3 +53,6 @@
 
 ## 1.0.6
 * Added ```NDDisposableBag```
+
+## 1.0.7
+* Added ```NDAutoRelease```

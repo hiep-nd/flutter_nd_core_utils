@@ -7,7 +7,7 @@
 
 library nd_core_utils;
 
-export 'package:nd_core_utils/nd_auto_disposable.dart';
+export 'package:nd_core_utils/nd_auto_release.dart';
 export 'package:nd_core_utils/nd_closure_iterable.dart';
 export 'package:nd_core_utils/nd_closure_iterator.dart';
 export "package:nd_core_utils/nd_core_utils_iterable.dart";
