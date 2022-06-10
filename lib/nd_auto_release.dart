@@ -38,8 +38,8 @@ class NDAutoReleaseClosure<T> extends NDAutoRelease<T> {
   @override
   void release(T v) => _release(v);
 
-// NDAutoReleaseClosure
-  NDAutoReleaseClosure(T v, this._release) : super(v);
+  // NDAutoReleaseClosure
+  NDAutoReleaseClosure(this._release, [T? v]) : super(v);
 
   // Privates
   final void Function(T) _release;
@@ -60,5 +60,5 @@ class NDAutoDisposable<T extends NDDisposable> extends NDAutoRelease<T> {
   void release(T v) => v.dispose();
 
   // NDAutoRelease
-  NDAutoDisposable(T? value) : super(value);
+  NDAutoDisposable([T? value]) : super(value);
 }

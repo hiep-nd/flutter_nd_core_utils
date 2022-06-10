@@ -56,3 +56,6 @@
 
 ## 1.0.7
 * Added ```NDAutoRelease```
+
+## 1.0.8
+* Updated ```NDAutoRelease```
