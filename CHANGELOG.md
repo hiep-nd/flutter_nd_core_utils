@@ -20,7 +20,7 @@
     * type * -> ND*
     * method * -> nd*
 * Updated ```NDCoreUtilsIterable```
-* Added ```NDMapUtils```
+* Added ```NDCoreUtilsMap```
 * Added ```NDWrapper```
 
 ## 0.0.6
@@ -48,7 +48,7 @@
 * Fixed build error for ```NDDisposableWrapper```.
 
 ## 1.0.5
-* Added ```NDFutureUtils```
+* Added ```NDCoreUtilsFuture```
 * Deperecated ```NDDebouncedAction1.run1```
 
 ## 1.0.6
@@ -59,3 +59,9 @@
 
 ## 1.0.8
 * Updated ```NDAutoRelease```
+
+## 1.0.9
+* Added ```NDCoreUtilsDateTime```
+
+## 1.0.10
+* Added ```NDClosureDisposable```

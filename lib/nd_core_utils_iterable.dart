@@ -187,3 +187,21 @@ extension NDCoreUtilsIterable<E> on Iterable<E> {
 
   bool ndStartsWith(Iterable<E> value) => startsWith(value);
 }
+
+extension NDCoreUtilsIterable2<E> on Iterable<E?> {
+  Iterable<E> notNull() {
+    return expand((element) => element == null ? [] : [element]);
+  }
+
+  Iterable<E> ndNotNull() => notNull();
+}
+
+extension NDCoreUtilsIterable3<E> on Iterable<E> {
+  E? get lastOrNull => isEmpty ? null : last;
+
+  E? get ndLastOrNull => lastOrNull;
+
+  E? get firstOrNull => isEmpty ? null : first;
+
+  E? get ndFirstOrNull => firstOrNull;
+}

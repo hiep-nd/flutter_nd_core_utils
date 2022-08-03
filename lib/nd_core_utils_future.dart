@@ -1,5 +1,5 @@
 //
-// nd_future_utils.dart
+// nd_core_utils_future.dart
 // nd_core_utils
 //
 // Created by Nguyen Duc Hiep on Sun May 29 2022.
@@ -8,7 +8,7 @@
 
 import 'package:tuple/tuple.dart';
 
-extension NDFutureUtils<T> on Future<T> {
+extension NDCoreUtilsFuture<T> on Future<T> {
   Future<Tuple2<T, T1>> join<T1>(Future<T1> other) {
     return Future.wait([this, other]).then((value) => Tuple2.fromList(value));
   }
