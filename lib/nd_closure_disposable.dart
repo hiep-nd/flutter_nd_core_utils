@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:nd_core_utils/nd_disposable.dart';
 
-abstract class NDClosureDisposable extends NDDisposable {
+mixin NDClosureDisposable on NDDisposable {
   // NDDisposable
   @override
   @mustCallSuper
@@ -10,7 +10,5 @@ abstract class NDClosureDisposable extends NDDisposable {
   }
 
   // NDClosureDisposable
-  final void Function()? onDispose;
-
-  NDClosureDisposable({this.onDispose});
+  late final void Function()? onDispose;
 }

@@ -65,3 +65,6 @@
 
 ## 1.0.10
 * Added ```NDClosureDisposable```
+
+## 1.0.11
+* Fixed ```NDClosureDisposable```
