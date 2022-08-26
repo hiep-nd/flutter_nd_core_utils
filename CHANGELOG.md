@@ -40,7 +40,6 @@
 
 ## 1.0.3
 * Added default implementation of NDDisposable.isDisposed.
-* Added default implementation of NDDisposable.isDisposed.
 * Renamed ```NDDisposableWrapper``` -> ```NDAutoDisposable```.
 * Deprecated ```NDVariableWrapper```.
 
@@ -68,3 +67,7 @@
 
 ## 1.0.11
 * Fixed ```NDClosureDisposable```
+
+## 1.0.12
+* Added ```NDNullable```
+* Updated ```NDCoreUtilsIterable```
