@@ -71,3 +71,6 @@
 ## 1.0.12
 * Added ```NDNullable```
 * Updated ```NDCoreUtilsIterable```
+
+## 1.0.13
+* Added ```NDCoreUtilsObject.to```

@@ -9,12 +9,18 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:nd_core_utils/nd_core_utils.dart';
 
 void main() {
-  test('Test NDCoreUtilsNullable.map', () {
+  test('Test NDCoreUtilsObject.map', () {
     int? value = 100;
     expect(value.map((v) => v + 1), 101);
     expect(value.map((v) => v.isEven ? null : 1), null);
 
     value = null;
     expect(value?.map((v) => v + 1), null);
+  });
+
+  test('Test NDCoreUtilsObject.to', () {
+    double value = 100.0;
+    expect(value.to<num>(), 100);
+    expect(value.to<String>(), null);
   });
 }
