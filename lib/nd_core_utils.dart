@@ -21,5 +21,6 @@ export 'package:nd_core_utils/nd_disposable.dart';
 export 'package:nd_core_utils/nd_disposable_bag.dart';
 export 'package:nd_core_utils/nd_disposable_wrapper.dart';
 export 'package:nd_core_utils/nd_etc.dart';
+export 'package:nd_core_utils/nd_json_utils.dart';
 export 'package:nd_core_utils/nd_nullable.dart';
 export 'package:nd_core_utils/nd_variable_wrapper.dart';

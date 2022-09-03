@@ -12,7 +12,7 @@ void main() {
   test('Test NDCoreUtilsIterableNullable.notNull', () {
     final list = <int?>[];
     final notNull = list.notNull();
-    expect(notNull, []);
+    expect(notNull, <int?>[]);
 
     list.add(1);
     expect(notNull, [1]);

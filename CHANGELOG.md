@@ -74,3 +74,6 @@
 
 ## 1.0.13
 * Added ```NDCoreUtilsObject.to```
+
+## 1.0.13
+* Added ```NDJsonUtils```.

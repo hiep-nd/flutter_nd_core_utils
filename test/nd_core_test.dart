@@ -6,10 +6,7 @@
 // Copyright © 2022 Nguyen Duc Hiep. All rights reserved.
 //
 
-import 'dart:async';
-
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nd_core_utils/nd_core_utils.dart';
 
 void main() async {
   test('Nullable', () {

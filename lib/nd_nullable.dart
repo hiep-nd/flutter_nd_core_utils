@@ -28,6 +28,7 @@ class _NDNullableError extends TypeError {
   /// Creates an NDNullable error with the provided [message].
   _NDNullableError([this.message]);
 
+  @override
   String toString() {
     if (message != null) {
       return "NDNullable failed: ${Error.safeToString(message)}";

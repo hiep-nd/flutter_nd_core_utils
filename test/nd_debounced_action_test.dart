@@ -30,7 +30,7 @@ void main() async {
     for (var i = 0; i < 5; i++) {
       Timer(Duration(milliseconds: 10 * (i + 1)), () async {
         callTime.add(DateTime.now());
-        futureResults.add(deboncedAction.run1(i));
+        futureResults.add(deboncedAction(i));
       });
     }
 

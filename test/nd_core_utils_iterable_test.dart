@@ -16,9 +16,9 @@ void main() {
     expect(
         <int>[1, 10, 2].insertSeparator(10).toList(), <int>[1, 10, 10, 10, 2]);
 
-    final list = [];
+    final list = <dynamic>[];
     final separatered = list.insertSeparator(10);
-    expect(separatered, []);
+    expect(separatered, <dynamic>[]);
 
     list.add(1);
     expect(separatered, [1]);
@@ -38,9 +38,9 @@ void main() {
     expect(<int>[1].insertLead(10).toList(), <int>[10, 1]);
     expect(<int>[1, 2].insertLead(10).toList(), <int>[10, 1, 2]);
 
-    final list = [];
+    final list = <dynamic>[];
     final leaded = list.insertLead(10);
-    expect(leaded, []);
+    expect(leaded, <dynamic>[]);
 
     list.add(1);
     expect(leaded, [10, 1]);
@@ -54,9 +54,9 @@ void main() {
     expect(<int>[1].insertTrail(10).toList(), <int>[1, 10]);
     expect(<int>[1, 2].insertTrail(10).toList(), <int>[1, 2, 10]);
 
-    final list = [];
+    final list = <dynamic>[];
     final trailed = list.insertTrail(10);
-    expect(trailed, []);
+    expect(trailed, <dynamic>[]);
 
     list.add(1);
     expect(trailed, [1, 10]);
