@@ -18,11 +18,11 @@ void main() {
 
     expect(
       cast<NDJsArray>(json)
-          ?.getOrNullAt<NDJsObject>(0)
-          ?.getAt<NDJsObject>('yoast_head_json')
-          ?.getAt<NDJsArray>('og_image')
-          ?.getOrNullAt<NDJsObject>(0)
-          ?.getAt<String>('url'),
+          ?.getOrNullAs<NDJsObject>(0)
+          ?.getAs<NDJsObject>('yoast_head_json')
+          ?.getAs<NDJsArray>('og_image')
+          ?.getOrNullAs<NDJsObject>(0)
+          ?.getAs<String>('url'),
       "http://kss.com.vn/wp-content/uploads/2022/08/lai-suat-ngan-hang-standard-chartered-2022040609102618.png",
     );
   });

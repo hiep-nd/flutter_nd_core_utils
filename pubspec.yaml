@@ -1,6 +1,6 @@
 name: nd_core_utils
 description: An utility library for dart.
-version: 1.0.14
+version: 1.0.15
 homepage: https://github.com/hiep-nd/flutter_nd_core_utils
 
 environment:

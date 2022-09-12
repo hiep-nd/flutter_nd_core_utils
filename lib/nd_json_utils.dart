@@ -4,11 +4,16 @@ typedef NDJsObject = Map<String, dynamic>;
 typedef NDJsArray = List<dynamic>;
 
 extension NDJsObjectUtils on NDJsObject {
-  E? getAt<E>(String key) => ndCast<E>(this[key]);
+  E? getAs<E>(String key) => cast<E>(this[key]);
+
+  E? ndGetAs<E>(String key) => getAs<E>(key);
 }
 
 extension NDJsArrayUtils on NDJsArray {
-  E? getAt<E>(int index) => ndCast<E>(this[index]);
-  E? getOrNullAt<E>(int index) =>
-      (0 <= index && index < length) ? ndCast<E>(this[index]) : null;
+  E? getAs<E>(int index) => cast<E>(this[index]);
+  E? getOrNullAs<E>(int index) =>
+      (0 <= index && index < length) ? cast<E>(this[index]) : null;
+
+  E? ndGetAs<E>(int index) => getAs(index);
+  E? nfGetOrNullAs<E>(int index) => getOrNullAs(index);
 }

@@ -75,5 +75,8 @@
 ## 1.0.13
 * Added ```NDCoreUtilsObject.to```
 
-## 1.0.13
+## 1.0.14
 * Added ```NDJsonUtils```.
+
+## 1.0.15
+* Renamed ```NDJsonUtils.getAt``` to ```NDJsonUtils.getAs```.
