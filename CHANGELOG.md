@@ -80,3 +80,6 @@
 
 ## 1.0.15
 * Renamed ```NDJsonUtils.getAt``` to ```NDJsonUtils.getAs```.
+
+## 1.0.16
+* Removed ```NDJsonUtils.nfGetOrNullAs```

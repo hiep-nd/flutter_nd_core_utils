@@ -10,10 +10,8 @@ extension NDJsObjectUtils on NDJsObject {
 }
 
 extension NDJsArrayUtils on NDJsArray {
-  E? getAs<E>(int index) => cast<E>(this[index]);
-  E? getOrNullAs<E>(int index) =>
+  E? getAs<E>(int index) =>
       (0 <= index && index < length) ? cast<E>(this[index]) : null;
 
   E? ndGetAs<E>(int index) => getAs(index);
-  E? nfGetOrNullAs<E>(int index) => getOrNullAs(index);
 }
