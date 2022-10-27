@@ -6,7 +6,7 @@
 // Copyright © 2022 Nguyen Duc Hiep. All rights reserved.
 //
 
-import 'package:nd_core_utils/nd_core_utils_object.dart';
+import 'package:nd_core_utils/src/nd_core_utils_object.dart';
 
 extension NDCoreUtilsDateTime on DateTime {
   DateTime copyWith(

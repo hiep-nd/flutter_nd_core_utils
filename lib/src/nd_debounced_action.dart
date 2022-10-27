@@ -9,7 +9,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:nd_core_utils/nd_disposable.dart';
+import 'package:nd_core_utils/src/nd_disposable.dart';
 
 class NDDebouncedActionRunResult<T> {
   T get result => _result!;

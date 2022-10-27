@@ -6,7 +6,7 @@
 // Copyright © 2022 Nguyen Duc Hiep. All rights reserved.
 //
 
-import 'package:nd_core_utils/nd_disposable.dart';
+import 'package:nd_core_utils/src/nd_disposable.dart';
 
 @Deprecated('Use NDAutoDisposable instead. Will be removed in 1.1')
 class NDDisposableWrapper<T extends NDDisposable> {

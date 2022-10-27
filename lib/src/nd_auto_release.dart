@@ -8,7 +8,7 @@
 
 import 'dart:async';
 
-import 'package:nd_core_utils/nd_disposable.dart';
+import 'package:nd_core_utils/src/nd_disposable.dart';
 
 abstract class NDAutoRelease<T> {
   NDAutoRelease(this._value);

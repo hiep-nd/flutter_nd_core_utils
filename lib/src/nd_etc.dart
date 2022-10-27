@@ -1,3 +1,11 @@
+//
+// nd_etc.dart
+// nd_core_utils
+//
+// Created by Nguyen Duc Hiep on Tue Oct 25 2022.
+// Copyright © 2022 Nguyen Duc Hiep. All rights reserved.
+//
+
 void setIfNeeded<T>(
   T Function() getter,
   void Function(T) setter,

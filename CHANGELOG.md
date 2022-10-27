@@ -82,4 +82,11 @@
 * Renamed ```NDJsonUtils.getAt``` to ```NDJsonUtils.getAs```.
 
 ## 1.0.16
-* Removed ```NDJsonUtils.nfGetOrNullAs```
+* Removed ```NDJsonUtils.ndGetOrNullAs```
+
+## 1.0.17
+* Relocated ```getAs```
+
+## 1.0.18
+* Added ```doInDebugMode```
+* Added ```NDRandomUtils```

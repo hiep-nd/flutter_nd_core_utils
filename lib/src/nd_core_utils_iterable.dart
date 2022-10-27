@@ -5,9 +5,9 @@
 //  Created by Nguyen Duc Hiep on 01/12/2021.
 //
 
-import 'package:nd_core_utils/nd_closure_iterable.dart';
-import 'package:nd_core_utils/nd_closure_iterator.dart';
-import 'package:nd_core_utils/nd_nullable.dart';
+import 'package:nd_core_utils/src/nd_closure_iterable.dart';
+import 'package:nd_core_utils/src/nd_closure_iterator.dart';
+import 'package:nd_core_utils/src/nd_nullable.dart';
 
 extension NDCoreUtilsIterable<E> on Iterable<E> {
   // Insert a separator
