@@ -1,0 +1,26 @@
+{
+    "editor.formatOnSave": true,
+    "fileHeaderComment": {
+        "parameter": {
+            "*": {
+                "commentbegin": "//",
+                "commentprefix": "//",
+                "commentend": "//",
+                "company": "Nguyen Duc Hiep",
+                "project": "nd_core_utils"
+            }
+        },
+        "template": {
+            "*": [
+                "${commentbegin}",
+                "${commentprefix} ${filename}",
+                "${commentprefix} ${project}",
+                "${commentprefix}",
+                "${commentprefix} Created by ${author} on ${date}.",
+                "${commentprefix} Copyright © ${year} ${company}. All rights reserved.",
+                "${commentend}",
+                ""
+            ]
+        }
+    }
+}

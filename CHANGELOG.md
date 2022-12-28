@@ -90,3 +90,6 @@
 ## 1.0.18
 * Added ```doInDebugMode```
 * Added ```NDRandomUtils```
+
+## 1.0.19
+* Added ```notreached```

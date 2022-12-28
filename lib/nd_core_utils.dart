@@ -12,6 +12,7 @@ export 'package:nd_core_utils/src/nd_closure_disposable.dart';
 export 'package:nd_core_utils/src/nd_closure_iterable.dart';
 export 'package:nd_core_utils/src/nd_closure_iterator.dart';
 export 'package:nd_core_utils/src/nd_core_utils_date_time.dart';
+export 'package:nd_core_utils/src/nd_core_utils_exception.dart';
 export 'package:nd_core_utils/src/nd_core_utils_future.dart';
 export "package:nd_core_utils/src/nd_core_utils_iterable.dart";
 export 'package:nd_core_utils/src/nd_core_utils_list.dart';
