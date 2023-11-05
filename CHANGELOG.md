@@ -97,3 +97,7 @@
 ## 1.0.20
 * Added ```NDBuilder```, ```NDCopying```, ```NDMutableCopying```, ```noLeaks```, ```noExceptions```
 * Updated ```NDClosureDisposable```
+
+## 1.0.21
+* Added ```NDDependent```
+* Updated ```cast```

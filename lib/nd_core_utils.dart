@@ -21,6 +21,7 @@ export 'package:nd_core_utils/src/nd_core_utils_list.dart';
 export 'package:nd_core_utils/src/nd_core_utils_map.dart';
 export 'package:nd_core_utils/src/nd_core_utils_object.dart';
 export 'package:nd_core_utils/src/nd_debounced_action.dart';
+export 'package:nd_core_utils/src/nd_dependent.dart';
 export 'package:nd_core_utils/src/nd_disposable.dart';
 export 'package:nd_core_utils/src/nd_disposable_bag.dart';
 export 'package:nd_core_utils/src/nd_disposable_wrapper.dart';

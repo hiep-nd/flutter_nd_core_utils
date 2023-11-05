@@ -30,7 +30,19 @@ void ndSetIfNeeded<T>(
       valuer,
     );
 
-T? cast<T>(dynamic value) => value is T ? value : null;
+T? cast<T>(dynamic value) {
+  if (value == null) {
+    return null;
+  }
+
+  if (value is T) {
+    return value;
+  }
+
+  logger.info(
+      'cast: Expected a value of type \'$T\', but got one of type \'${value.runtimeType}\'');
+  return null;
+}
 
 T? ndCast<T>(dynamic value) => cast<T>(value);
 
