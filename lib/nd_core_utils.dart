@@ -8,9 +8,11 @@
 library nd_core_utils;
 
 export 'package:nd_core_utils/src/nd_auto_release.dart';
+export 'package:nd_core_utils/src/nd_builder.dart';
 export 'package:nd_core_utils/src/nd_closure_disposable.dart';
 export 'package:nd_core_utils/src/nd_closure_iterable.dart';
 export 'package:nd_core_utils/src/nd_closure_iterator.dart';
+export 'package:nd_core_utils/src/nd_copying.dart';
 export 'package:nd_core_utils/src/nd_core_utils_date_time.dart';
 export 'package:nd_core_utils/src/nd_core_utils_exception.dart';
 export 'package:nd_core_utils/src/nd_core_utils_future.dart';
@@ -25,6 +27,7 @@ export 'package:nd_core_utils/src/nd_disposable_wrapper.dart';
 export 'package:nd_core_utils/src/nd_etc.dart';
 export 'package:nd_core_utils/src/nd_foundation_utils.dart';
 export 'package:nd_core_utils/src/nd_json_utils.dart';
+export 'package:nd_core_utils/src/nd_mutable_copying.dart';
 export 'package:nd_core_utils/src/nd_nullable.dart';
 export 'package:nd_core_utils/src/nd_random_utils.dart';
 export 'package:nd_core_utils/src/nd_variable_wrapper.dart';

@@ -93,3 +93,7 @@
 
 ## 1.0.19
 * Added ```notreached```
+
+## 1.0.20
+* Added ```NDBuilder```, ```NDCopying```, ```NDMutableCopying```, ```noLeaks```, ```noExceptions```
+* Updated ```NDClosureDisposable```

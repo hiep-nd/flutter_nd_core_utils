@@ -6,6 +6,8 @@
 // Copyright © 2022 Nguyen Duc Hiep. All rights reserved.
 //
 
+import 'package:nd_core_utils/src/logger.dart';
+
 void setIfNeeded<T>(
   T Function() getter,
   void Function(T) setter,
@@ -31,3 +33,14 @@ void ndSetIfNeeded<T>(
 T? cast<T>(dynamic value) => value is T ? value : null;
 
 T? ndCast<T>(dynamic value) => cast<T>(value);
+
+T? noExceptions<T>(T Function() action) {
+  try {
+    return action();
+  } on Exception catch (e) {
+    logger.info(e.toString());
+    return null;
+  }
+}
+
+T? ndNoExceptions<T>(T Function() action) => noExceptions(action);

@@ -8,6 +8,17 @@
 
 import 'package:nd_core_utils/nd_core_utils.dart';
 
+T noLeaks<T>(T Function(NDDisposableBag bag) action) {
+  final bag = NDDisposableBag();
+  try {
+    return action(bag);
+  } finally {
+    bag.dispose();
+  }
+}
+
+T ndNoLeaks<T>(T Function(NDDisposableBag bag) action) => noLeaks(action);
+
 extension NDDisposableBagUtils on NDDisposable {
   /// Adds `this` to `bag`
   ///

@@ -10,13 +10,24 @@ import 'package:flutter/foundation.dart';
 import 'package:nd_core_utils/src/nd_disposable.dart';
 
 mixin NDClosureDisposable on NDDisposable {
+  // NDClosureDisposable
+  void Function()? disposeHanlder;
+
   // NDDisposable
   @override
   @mustCallSuper
   void dispose() {
-    onDispose?.call();
+    if (_isDisposed) {
+      return;
+    }
+
+    disposeHanlder?.call();
+    _isDisposed = true;
   }
 
-  // NDClosureDisposable
-  late final void Function()? onDispose;
+  @override
+  bool get isDisposed => _isDisposed;
+
+  // Privates
+  bool _isDisposed = false;
 }
